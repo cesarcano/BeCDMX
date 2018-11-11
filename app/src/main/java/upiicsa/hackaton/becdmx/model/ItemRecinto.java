@@ -6,13 +6,15 @@ public class ItemRecinto {
     private String direccion;
     private double lat;
     private double lng;
+    double distancia;
 
-    public ItemRecinto(String id, String nombre, String direccion, double lat, double lng) {
+    public ItemRecinto(String id, String nombre, String direccion, double lat, double lng, double distancia) {
         this.id = id;
         this.nombre = nombre;
         this.direccion = direccion;
         this.lat = lat;
         this.lng = lng;
+        this.distancia = distancia;
     }
 
     public String getId() {
@@ -53,5 +55,24 @@ public class ItemRecinto {
 
     public void setLng(double lng) {
         this.lng = lng;
+    }
+
+    public double getDistancia() {
+        return distancia;
+    }
+
+    public void setDistancia(double distancia) {
+        this.distancia = distancia;
+    }
+
+    @Override
+    public String toString() {
+        return "ItemRecinto{" +
+                "id='" + id + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", lat=" + lat +
+                ", lng=" + lng +
+                '}';
     }
 }

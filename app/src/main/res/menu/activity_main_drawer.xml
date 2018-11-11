@@ -11,35 +11,31 @@
             <item
                 android:id="@+id/nav_festivales"
                 android:icon="@drawable/ic_nav_festivales"
-                android:title="@string/festivales" />
+                android:title="Antropología" />
             <item
                 android:id="@+id/nav_ferias"
                 android:icon="@drawable/ic_nav_ferias"
-                android:title="@string/ferias" />
+                android:title="Arqueología" />
             <item
                 android:id="@+id/nav_festividades"
                 android:icon="@drawable/ic_nav_festividades"
-                android:title="@string/festividades" />
+                android:title="Arte" />
             <item
                 android:id="@+id/nav_museos"
                 android:icon="@drawable/ic_nav_museos"
-                android:title="@string/museos" />
+                android:title="Ciencia y Tec." />
             <item
                 android:id="@+id/nav_auditorios"
                 android:icon="@drawable/ic_nav_auditorios"
-                android:title="@string/auditorios" />
+                android:title="Especializado" />
             <item
                 android:id="@+id/nav_bibliotecas"
                 android:icon="@drawable/ic_nav_bibliotecas"
-                android:title="@string/bibliotecas" />
+                android:title="Historia" />
             <item
                 android:id="@+id/nav_centros"
                 android:icon="@drawable/ic_nav_centros"
-                android:title="@string/centros_culturales" />
-            <item
-                android:id="@+id/nav_galerias"
-                android:icon="@drawable/ic_nav_galeria"
-                android:title="@string/galerias" />
+                android:title="TND" />
         </menu>
     </item>
 </menu>

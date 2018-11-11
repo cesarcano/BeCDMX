@@ -13,7 +13,6 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import upiicsa.hackaton.becdmx.R;
-import upiicsa.hackaton.becdmx.model.Geopunto;
 import upiicsa.hackaton.becdmx.model.ItemRecinto;
 
 public class ViewHolderItemRecinto extends RecyclerView.ViewHolder {
@@ -41,7 +40,6 @@ public class ViewHolderItemRecinto extends RecyclerView.ViewHolder {
         tv_llegar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 final Uri uri;
                 final double lat = itemRecinto.getLat();
                 final double lon = itemRecinto.getLng();
@@ -58,11 +56,17 @@ public class ViewHolderItemRecinto extends RecyclerView.ViewHolder {
     }
     public void setItem(ItemRecinto item) {
         this.itemRecinto = item;
+        String d = "";
         tv_nombre.setText(item.getNombre());
         tv_direccion.setText(item.getDireccion());
-        Geopunto geopunto1 = new Geopunto(item.getLat(), item.getLng());
-        double distancia = geopunto1.getDistancia(new Geopunto(19.3961407, -99.0913228));
-        tv_distancia.setText(Double.toString(distancia));
+        float ds =  ((int) item.getDistancia() * 100) / 100 ;
+        if (item.getDistancia() > 1000) {
+            d = Float.toString(ds / 1000) + " km";
+        } else {
+            d = Float.toString(ds / 1000) + " m";
+        }
+
+        tv_distancia.setText(d);
     }
 
 }
