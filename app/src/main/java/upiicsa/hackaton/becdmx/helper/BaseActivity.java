@@ -1,11 +1,12 @@
-package upiicsa.hackaton.becdmx.helper.holder;
+package upiicsa.hackaton.becdmx.helper;
 
 import android.app.ProgressDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import upiicsa.hackaton.becdmx.R;
 
-public class BaseActivity {
+public class BaseActivity extends AppCompatActivity {
     private ProgressDialog mProgressDialog;
 
     public void showProgressDialog() {
