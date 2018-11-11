@@ -54,6 +54,46 @@ public class MainActivity extends BaseActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        mDataBase = FirebaseDatabase.getInstance().getReference();
+        mDataBase.child("/museos/").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                final ArrayList<ItemRecinto> recintos = new ArrayList<>();
+                for (DataSnapshot snapshot: dataSnapshot.getChildren()) {
+                    Geopunto geopunto1 = new Geopunto(Double.parseDouble(snapshot.child("gmaps_latitud").getValue().toString())
+                            , Double.parseDouble(snapshot.child("gmaps_longitud").getValue().toString()));
+                    double distancia = geopunto1.getDistancia(new Geopunto(19.3961407, -99.0913228));
+                        Log.e("", "onDataChange: " + Double.toString(distancia));
+                        ItemRecinto recinto = new ItemRecinto(snapshot.getKey(),
+                                snapshot.child( "museo_nombre").getValue().toString(),
+                                snapshot.child("museo_calle_numero").getValue().toString(),
+                                Double.parseDouble(snapshot.child("gmaps_latitud").getValue().toString()),
+                                Double.parseDouble(snapshot.child("gmaps_longitud").getValue().toString()),
+                                distancia);
+                        Log.e("", "onDataChange: "+ recinto.toString());
+                        recintos.add(recinto);
+                }
+                Collections.sort(recintos, new Comparator<ItemRecinto>() {
+                    @Override
+                    public int compare(ItemRecinto c1, ItemRecinto c2) {
+                        return Double.compare(c1.getDistancia(), c2.getDistancia());
+                    }
+                });
+
+                if (recintoAdapter == null) {
+                    recintoAdapter = new ItemRecintoAdapter();
+                }
+                recintoAdapter.setList(recintos);
+                recyclerView.setAdapter(recintoAdapter);
+                recyclerView.setLayoutManager(new LinearLayoutManager(getBaseContext()));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     @Override
