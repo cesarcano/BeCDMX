@@ -2,42 +2,43 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-    <item android:title="@string/lugares"><item
+    <item
         android:id="@+id/nav_sabiasque"
-        android:icon="@drawable/ic_menu_share"
-        android:title="@string/festivales" />
+        android:icon="@drawable/ic_nav_sabiasque"
+        android:title="@string/sabiasque" />
+    <item android:title="@string/lugares">
         <menu>
             <item
                 android:id="@+id/nav_festivales"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/ic_nav_festivales"
                 android:title="@string/festivales" />
             <item
                 android:id="@+id/nav_ferias"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_nav_ferias"
                 android:title="@string/ferias" />
             <item
                 android:id="@+id/nav_festividades"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_nav_festividades"
                 android:title="@string/festividades" />
             <item
                 android:id="@+id/nav_museos"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_nav_museos"
                 android:title="@string/museos" />
             <item
                 android:id="@+id/nav_auditorios"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_nav_auditorios"
                 android:title="@string/auditorios" />
             <item
                 android:id="@+id/nav_bibliotecas"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_nav_bibliotecas"
                 android:title="@string/bibliotecas" />
             <item
                 android:id="@+id/nav_centros"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_nav_centros"
                 android:title="@string/centros_culturales" />
             <item
                 android:id="@+id/nav_galerias"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_nav_galeria"
                 android:title="@string/galerias" />
         </menu>
     </item>
