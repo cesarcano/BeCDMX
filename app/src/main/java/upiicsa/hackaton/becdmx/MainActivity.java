@@ -27,8 +27,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import upiicsa.hackaton.becdmx.helper.BaseActivity;
 import upiicsa.hackaton.becdmx.helper.adapter.ItemRecintoAdapter;
+import upiicsa.hackaton.becdmx.helper.adapter.ItemSabiasAdapter;
 import upiicsa.hackaton.becdmx.model.Geopunto;
 import upiicsa.hackaton.becdmx.model.ItemRecinto;
+import upiicsa.hackaton.becdmx.model.ItemSabias;
 
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -36,6 +38,7 @@ public class MainActivity extends BaseActivity
 
     private DatabaseReference mDataBase;
     private ItemRecintoAdapter recintoAdapter;
+    private ItemSabiasAdapter sabiasAdapter;
     @BindView(R.id.recyclerview) RecyclerView recyclerView;
 
     @Override
@@ -129,7 +132,7 @@ public class MainActivity extends BaseActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_sabiasque:
-
+                setSabias();
             break;
             case R.id.nav_festivales:
             setListaRecintos("Antropología", "museo");
@@ -193,6 +196,33 @@ public class MainActivity extends BaseActivity
                 }
                 recintoAdapter.setList(recintos);
                 recyclerView.setAdapter(recintoAdapter);
+                recyclerView.setLayoutManager(new LinearLayoutManager(getBaseContext()));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    void setSabias() {
+        mDataBase = FirebaseDatabase.getInstance().getReference();
+        mDataBase.child("/sabiasque/").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                final ArrayList<ItemSabias> recintos = new ArrayList<>();
+                for (DataSnapshot snapshot: dataSnapshot.getChildren()) {
+                    ItemSabias itemSabias = new ItemSabias(snapshot.child("url").getValue().toString(),
+                            snapshot.child("nombre").getValue().toString());
+                    recintos.add(itemSabias);
+                }
+
+                if (sabiasAdapter == null) {
+                    sabiasAdapter = new ItemSabiasAdapter();
+                }
+                sabiasAdapter.setList(recintos);
+                recyclerView.setAdapter(sabiasAdapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(getBaseContext()));
             }
 
