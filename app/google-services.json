@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "987082996018",
+    "firebase_url": "https://becdmx-c0e38.firebaseio.com",
+    "project_id": "becdmx-c0e38",
+    "storage_bucket": "becdmx-c0e38.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:987082996018:android:fa181c900dc4b516",
+        "android_client_info": {
+          "package_name": "upiicsa.hackaton.becdmx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "987082996018-m2c1oem7pnj5i935djb9i14l4uvm4rhm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "upiicsa.hackaton.becdmx",
+            "certificate_hash": "3e0f14ecdd6cb9d7eeb66cf81198d04b06d528ea"
+          }
+        },
+        {
+          "client_id": "987082996018-5tvjh6v1f1v2ddk7jvbt6eudb0a7jstk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBa8g62SunLuQUdzeRXIfeYTT8r37tE2Fs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "987082996018-5tvjh6v1f1v2ddk7jvbt6eudb0a7jstk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
