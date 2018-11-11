@@ -3,6 +3,7 @@ package upiicsa.hackaton.becdmx.helper.holder;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +26,7 @@ public class ViewHolderItemRecinto extends RecyclerView.ViewHolder {
 
     ItemRecinto itemRecinto;
     private Context context;
+    CardView cardView;
     @BindView(R.id.tv_nombre) TextView tv_nombre;
     @BindView(R.id.tv_direccion) TextView tv_direccion ;
     @BindView(R.id.tv_distancia) TextView tv_distancia ;
