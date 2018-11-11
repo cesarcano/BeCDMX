@@ -61,21 +61,23 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        switch (item.getItemId()) {
+            case R.id.nav_festivales:
+            break;
+            case R.id.nav_ferias:
+            break;
+            case R.id.nav_festividades:
+            break;
+            case R.id.nav_museos:
+            break;
+            case R.id.nav_auditorios:
+            break;
+            case R.id.nav_bibliotecas:
+            break;
+            case R.id.nav_centros:
+            break;
+            case R.id.nav_galerias:
+            break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

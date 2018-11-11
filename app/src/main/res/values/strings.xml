@@ -6,4 +6,13 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="festivales">Festivales</string>
+    <string name="ferias" >Ferias</string>
+    <string name="festividades">Festividades</string>
+    <string name="museos">Museos</string>
+    <string name="auditorios">Auditorios</string>
+    <string name="bibliotecas">Bilbliotecas</string>
+    <string name="centros_culturales">Centros culturales</string>
+    <string name="galerias">Galerías</string>
+    <string name="lugares">Categorías</string>
 </resources>
